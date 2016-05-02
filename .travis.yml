@@ -30,4 +30,4 @@ deploy:
 after_deploy:
 - export DEPLOY_URL=https://cdn.thegrid.io/design-systems/rss-generator/${TRAVIS_TAG:-master}/rss-generator.js
 - echo "New version uploaded to ${DEPLOY_URL}"
-- node ./node_modules/.bin/thegrid-designsystem-update rss-generator ${TRAVIS_TAG} ${DEPLOY_URL} --options "`cat poly-options.json`"
+- node ./node_modules/.bin/thegrid-designsystem-update rss-generator ${TRAVIS_TAG} ${DEPLOY_URL} --options "`cat designsystem-options.json`"
