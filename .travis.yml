@@ -4,7 +4,10 @@ node_js:
 before_script:
 - npm install grunt-cli -g
 env:
-- CXX=g++-4.8
+  matrix:
+  - CXX=g++-4.8
+  global:
+    secure: PnT+5AzMhP+fBnCkQwjwJn5ELKrKwl9dmDzxm+IHhJ6OX5bWxTGiLL+74NK72MDSHSSYI12YChG/Iq6fZEIHffqcRfXB4zpFuxMNzU99pMis79pW5mv74DjFVPHxU7u8Bdg3iNahZ2Ucfob9qE/hx82iGlRTawc0yZg2e4V/t+sridR+32IywUCSFOwf+DwEF+WG3dNi3dCDWaiSvVVN6UueX1Q/BUs0Kd/MWgtE0sxJFmCYSFLMxM7VQhPONiHF1/gXunnrCbrQP0JKuXYjmesEOGIAOmw9wj7Z/rWLlIJXI4SD7hbEk1YR+4j0hmvTqLwprSTPf0Scbtg9xgLcHgkSjyIGkftWxBmhwf7ZyrFpAoc1kRtt01Fua4NzbATCa/mrpRW8eg6yhXnuyo0P2VOfDd/NOwHCCY++9XCjl3JoFlO8ep8IsGMpG2dqe8jAilaQbixLRt/gpPrDhmX6l+sYbpyHdZkv1EmLDeH1xiFmRbsv7FU6BSZJ/gMLkaKG+WzNnsgA8JxQhi2K1u/Afqh3X0eUx/b/UYYCN9KwJt2olk9O/h6/t+HOiHvSxJeOoPsBSX6jAcbYj6yxZaBVUCjsK1obsOx1w+CW+xqvBVPxFKx0q58NTefRk08U0y2+PD0r/6gWn21+Pf4q4SKka1PBVZMikx/d6ZguApYbi/A=
 addons:
   apt:
     sources:
@@ -24,3 +27,7 @@ deploy:
   on:
     repo: the-grid/rss-generator
     tags: true
+after_deploy:
+- export DEPLOY_URL=https://cdn.thegrid.io/design-systems/rss-generator/${TRAVIS_TAG:-master}/rss-generator.js
+- echo "New version uploaded to ${DEPLOY_URL}"
+- node ./node_modules/.bin/thegrid-designsystem-update rss-generator ${TRAVIS_TAG} ${DEPLOY_URL} --options "`cat poly-options.json`"

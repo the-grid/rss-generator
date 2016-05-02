@@ -28,6 +28,7 @@
     "jsjob": "^0.10.2",
     "json-loader": "^0.5.4",
     "mocha": "^2.4.5",
+    "thegrid-apidocs": "0.0.39",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },
