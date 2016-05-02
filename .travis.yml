@@ -17,7 +17,7 @@ deploy:
   secret_access_key:
     secure: Bzk4QFT9JhcRGZC39eusfeZ2iAEx+YQlVaN/fsDV+Oc6DtL2uRygjYcLM0YCMFW8sbJnMRPbhbkbYNbIHx8D7FdQPf/iux1vnHTG5HtVfImZpaVt29qwz2lZ9bPqlEWsKfjuzPZchj8lvojxTbGQLz6zAxe5ipjF8u6L9B1kLHJ2VsvE2SUZn96DA5Dcl9i+VKAdr0VfJb/kG+hrqAZRulozc5vPjnfdU3HoXThy0LfkDFuX19XTBoyS3LiEE5yv2YC0c4PJ+yMZ1gx5m3KL6vxbQ3LnePUUaE8URC68Uja5ra01O6mWtzBrIpotyyRDJIUtKyGJ5w/lML5oYh06vyvLZU4NoMdRP2MCl5lkmj2p3aXb+aN+WXeK0TbV1/sxTahtc1IjJn2xzN+jwIYV4O7Op232Dhgs5bBIY4nQJC0FeSCIHd90BvWLsldHQwfgK4/CvIwlOTFSabcuh3bvdj89MBdyRk77KdMk6x2JPo6yTq5GPVIW4CNnH6NWGgi9IF8iYTCGL3VTkszOnCOGE+F3pAYu7PrtGmv+n1hUIcoVTg+U/YXPFN3J0u2A9w4zncGFNbYvOchG2b7/JwrxU+Cx844hSgEcx/w+wfq6KhiY+Nn+m2WI8kYblI0UHTVFiFbMvEzmLXf21l1fhH2sj1WAbyga82VYv7nFWONntkA=
   bucket: cdn.thegrid.io
-  endpoint: s3-website-us-west-2.amazonaws.com
+  region: us-west-2
   local-dir: dist
   upload-dir: design-systems/rss-generator/${TRAVIS_TAG:-master}
   skip-cleanup: true
