@@ -19,5 +19,6 @@ deploy:
   bucket: cdn.thegrid.io
   local-dir: dist
   upload-dir: design-systems/rss-generator/${TRAVIS_TAG:-master}
+  skip-cleanup: true
   on:
     repo: the-grid/rss-generator
