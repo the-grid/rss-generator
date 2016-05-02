@@ -1,6 +1,6 @@
 {
   "name": "@the-grid/rss-generator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The Grid page to RSS converter",
   "main": "index.js",
   "scripts": {
