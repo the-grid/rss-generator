@@ -26,7 +26,7 @@ exports.solveRss = (data, callback) ->
       title: item.block?.title or item.metadata?.title or item.title
       description: item.block?.html or item.block?.description or item.metadata?.description or ''
       url: itemUrl
-      date: item.metadata?.datePublished or item.metadata?.dateModified
+      date: item.metadata?.datePublished
       guid: item.id
 
   result =
