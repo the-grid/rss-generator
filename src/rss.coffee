@@ -22,9 +22,15 @@ exports.solveRss = (data, callback) ->
       itemUrl = "#{data.siteUrl}#{item.metadata.url}"
     else
       itemUrl = item.metadata?.isBasedOnUrl or ''
+    html = null
+    if item.content?.length
+      html = item.content.filter((block) ->
+        block.metadata?.starred is true
+      ).map (block) ->
+        block.html
     feed.item
       title: item.block?.title or item.metadata?.title or item.title
-      description: item.block?.html or item.block?.description or item.metadata?.description or ''
+      description: html or item.block?.html or item.block?.description or item.metadata?.description or ''
       url: itemUrl
       date: item.metadata?.datePublished or item.metadata?.dateModified
       guid: item.id
